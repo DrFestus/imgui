@@ -20,20 +20,11 @@ project "ImGui"
         "imgui_demo.cpp"
     }
 
-    includedirs
-    {
-        "../imgui-sfml"
-    }
-
     filter "system:windows"
         systemversion "latest"
         cppdialect "C++17"
         staticruntime "On"
 
-    filter { "system:windows", "configurations:Debug" }
-        runtime "Debug"
-
     filter { "system:windows", "configurations:Release" }
-        runtime "Release"
+        buildoptions "/MT"
 
-    filter {}
